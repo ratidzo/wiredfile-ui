@@ -17,18 +17,18 @@ export default function Navbar() {
     const { setTheme } = useTheme()
 
     return (
-        <nav className="flex justify-between items-center py-6 px-10 dark:border-b">
+        <nav className="flex flex-col sm:flex-row sm:justify-between sm:items-center  py-6 px-10 dark:border-b">
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
-            <div className="flex items-center justify-between w-[25rem] shrink-0">
-                <Button variant="link">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-[25rem] shrink-0">
+                <Button className="p-0" variant="link">
                     Product
                 </Button>
-                <Button variant="link">
+                <Button className="p-0" variant="link">
                     Company
                 </Button>
-                <Button variant="link">
+                <Button className="p-0" variant="link">
                     FAQ
                 </Button>
                 {/* Theme control dropdown menu */}
@@ -63,7 +63,6 @@ export default function Navbar() {
                             </h1>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
-                    
                 </DropdownMenu>
 
             </div>
