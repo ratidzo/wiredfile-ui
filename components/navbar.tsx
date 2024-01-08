@@ -21,7 +21,7 @@ export default function Navbar() {
             <h1 className="text-2xl font-semibold text-indigo-500">
                 Wired File
             </h1>
-            <div>
+            <div className="flex items-center justify-between w-[25rem] shrink-0">
                 <Button variant="link">
                     Product
                 </Button>
