@@ -17,7 +17,7 @@ export default function Navbar() {
     const { setTheme } = useTheme()
 
     return (
-        <nav className="flex justify-between items-center py-6 px-10">
+        <nav className="flex justify-between items-center py-6 px-10 dark:border-b">
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
