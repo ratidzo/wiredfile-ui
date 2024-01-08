@@ -11,7 +11,7 @@ import {
     DropdownMenuLabel
     
 } from "@/components/ui/dropdown-menu"
-
+import { Separator } from "@/components/ui/separator"
 
 export default function Navbar() {
     const { setTheme } = useTheme()
@@ -21,7 +21,7 @@ export default function Navbar() {
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-[25rem] shrink-0">
+            <div className="flex flex-col gap-4 py-4 md:gap-0 md:py-0 md:flex-row items-start md:items-center justify-between w-[25rem] shrink-0">
                 <Button className="p-0" variant="link">
                     Product
                 </Button>
@@ -64,9 +64,10 @@ export default function Navbar() {
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
+                <Separator className="w-[83vw] sm:w-[87vw] my-4 md:hidden" orientation="horizontal" />
 
             </div>
-            <Button>
+            <Button className="">
                 Sign in
             </Button>
         </nav>
