@@ -18,7 +18,7 @@ export default function Navbar() {
 
     return (
         <nav className="flex justify-between items-center py-6 px-10">
-            <h1 className="text-2xl font-semibold text-indigo-500">
+            <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
             <div className="flex items-center justify-between w-[25rem] shrink-0">
