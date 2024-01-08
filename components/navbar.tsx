@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { GearIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 import {
     DropdownMenu,
@@ -54,6 +54,12 @@ export default function Navbar() {
                             <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
                             <h1>
                                 Dark
+                            </h1>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="flex gap-2 w-[13.375rem]" onClick={() => setTheme("system") }>
+                            <GearIcon className="h-[1.2rem] w-[1.2rem]" />
+                            <h1>
+                                System
                             </h1>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
