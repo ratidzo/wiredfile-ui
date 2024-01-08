@@ -17,11 +17,11 @@ export default function Navbar() {
     const { setTheme } = useTheme()
 
     return (
-        <nav className="flex flex-col sm:flex-row sm:justify-between sm:items-center  py-6 px-10 dark:border-b">
+        <nav className="flex flex-col md:flex-row md:justify-between md:items-center  py-6 px-10 dark:border-b">
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-[25rem] shrink-0">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-[25rem] shrink-0">
                 <Button className="p-0" variant="link">
                     Product
                 </Button>
