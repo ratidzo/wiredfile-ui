@@ -14,6 +14,7 @@ import {
 
 
 export default function Navbar() {
+    const { setTheme } = useTheme()
 
     return (
         <nav className="flex justify-between items-center py-6 px-10">
@@ -39,6 +40,17 @@ export default function Navbar() {
                             <span className="sr-only">Toggle theme</span>
                         </Button>
                     </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start">
+                        <DropdownMenuLabel>
+                            Theme
+                        </DropdownMenuLabel>
+                        <DropdownMenuItem className="flex gap-2 w-[13.375rem]" onClick={() => setTheme("light") }>
+                            <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+                            <h1>
+                                Light
+                            </h1>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
                     
                 </DropdownMenu>
 
