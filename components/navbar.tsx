@@ -50,6 +50,12 @@ export default function Navbar() {
                                 Light
                             </h1>
                         </DropdownMenuItem>
+                        <DropdownMenuItem className="flex gap-2 w-[13.375rem]" onClick={() => setTheme("dark") }>
+                            <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
+                            <h1>
+                                Dark
+                            </h1>
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                     
                 </DropdownMenu>
