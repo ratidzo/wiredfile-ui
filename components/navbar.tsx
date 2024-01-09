@@ -70,7 +70,7 @@ export default function Navbar() {
 
             </div>
             <Link href={'/dashboard'}>
-                <Button className="w-[83vw] md:w-20">
+                <Button className="w-[83vw] md:w-[78px]">
                     Sign in
                 </Button>
             </Link>
