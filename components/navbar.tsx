@@ -29,14 +29,23 @@ export default function Navbar() {
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
                 Wired File
             </h1>
-            <div className="flex flex-col gap-4 py-4 md:gap-0 md:py-0 md:flex-row items-start md:items-center justify-between w-[25rem] shrink-0">
-                <Button className="p-0" variant="link">
+            <div className="flex flex-col gap-4 py-4 md:py-0 md:flex-row items-start md:items-center justify-center md:gap-12 w-[25rem] shrink-0">
+                <Button className={`p-0 ${
+                    currentPath.startsWith('/dashboard') ? 'hidden':
+                    'block'
+                }`} variant="link">
                     Product
                 </Button>
-                <Button className="p-0" variant="link">
+                <Button className={`p-0 ${
+                    currentPath.startsWith('/dashboard') ? 'hidden':
+                    'block'
+                }`} variant="link">
                     Company
                 </Button>
-                <Button className="p-0" variant="link">
+                <Button className={`p-0 ${
+                    currentPath.startsWith('/dashboard') ? 'hidden':
+                    'block'
+                }`} variant="link">
                     FAQ
                 </Button>
                 {/* Theme control dropdown menu */}
