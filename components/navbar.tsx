@@ -1,7 +1,14 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GearIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import {
+     GearIcon,
+     MoonIcon, 
+     SunIcon,
+     HamburgerMenuIcon,
+     Cross1Icon
+     
+} from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 import {
     DropdownMenu,
@@ -19,9 +26,11 @@ import {
     AvatarImage
 } from '@/components/ui/avatar'
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
 
 export default function Navbar() {
+    const [ menuOpen, setMenuOpen] = useState(false);
     const { setTheme } = useTheme()
     const currentPath = usePathname()
     return (
@@ -100,6 +109,20 @@ export default function Navbar() {
                     </Link>
                 )
             }
+
+            <Button variant='outline' size='icon' onClick={() =>
+                menuOpen ? setMenuOpen(false): setMenuOpen(true)
+            }>
+                {
+                    menuOpen ? (
+                        <Cross1Icon/>
+                    ): (
+                        <HamburgerMenuIcon />
+                    )
+                }
+            </Button>
+            
+
         </nav>
     )
 }
