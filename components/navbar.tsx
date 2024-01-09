@@ -13,11 +13,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage
+} from '@/components/ui/avatar'
+import { usePathname } from "next/navigation"
 
 
 export default function Navbar() {
     const { setTheme } = useTheme()
-
+    const currentPath = usePathname()
     return (
         <nav className="flex flex-col md:flex-row md:justify-between md:items-center  py-6 px-10 dark:border-b">
             <h1 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-400">
@@ -69,11 +75,23 @@ export default function Navbar() {
                 <Separator className="w-[82vw] my-4 md:hidden" orientation="horizontal" />
 
             </div>
-            <Link href={'/dashboard'}>
-                <Button className="w-[83vw] md:w-[78px]">
-                    Sign in
-                </Button>
-            </Link>
+            {
+                currentPath.startsWith('/dashboard') ? 
+                (
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                
+                ): (
+                    <Link href={'/dashboard'}>
+                        <Button className="w-[83vw] md:w-[78px]">
+                            Sign in
+                        </Button>
+                    </Link>
+                )
+            }
         </nav>
     )
 }
+
