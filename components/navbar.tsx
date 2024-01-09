@@ -110,14 +110,15 @@ export default function Navbar() {
                 )
             }
 
-            <Button variant='outline' size='icon' onClick={() =>
+            <Button className="md:hidden" 
+                variant='outline' size='icon' onClick={() =>
                 menuOpen ? setMenuOpen(false): setMenuOpen(true)
             }>
                 {
                     menuOpen ? (
-                        <Cross1Icon/>
+                        <Cross1Icon className="w-6 h-6"/>
                     ): (
-                        <HamburgerMenuIcon />
+                        <HamburgerMenuIcon className="w-6 h-6" />
                     )
                 }
             </Button>
