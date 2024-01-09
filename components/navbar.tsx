@@ -12,6 +12,8 @@ import {
     
 } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
+
 
 export default function Navbar() {
     const { setTheme } = useTheme()
@@ -64,12 +66,14 @@ export default function Navbar() {
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
-                <Separator className="w-[83vw] sm:w-[87vw] my-4 md:hidden" orientation="horizontal" />
+                <Separator className="w-[82vw] my-4 md:hidden" orientation="horizontal" />
 
             </div>
-            <Button className="">
-                Sign in
-            </Button>
+            <Link href={'/dashboard'}>
+                <Button className="w-[83vw] md:w-20">
+                    Sign in
+                </Button>
+            </Link>
         </nav>
     )
 }
