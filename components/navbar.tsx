@@ -57,15 +57,16 @@ export default function Navbar() {
 
     return (
         <nav className="w-full py-4 px-4">
+            {/* logo */}
             <div className="px-4">
                 <h1 className="text-2xl text-indigo-500 dark:text-indigo-400">
                     Wired File
                 </h1>
             </div>
             {/* responsive menu */}
-            <div>
+            <div className="relative">
                 {/* nav links */}
-                <ul className="border w-full absolute left-0 pl-4">
+                <ul className="w-full absolute left-0 pl-4">
                     {
                         links.map(link => (
                             <li key={link.name} className="my-2">
@@ -78,7 +79,15 @@ export default function Navbar() {
                         ))
                     }
                     {/* theme control dropdown menu */}
-                    
+                    <li>
+                        <Button className="ml-4">
+                            Theme
+                        </Button>
+                    </li>
+                    <Separator className="my-4" />
+                    <Button className="w-full">
+                        Sign in
+                    </Button>
                 </ul>
             </div>
         </nav>
