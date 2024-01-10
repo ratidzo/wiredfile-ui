@@ -32,6 +32,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Navbar() {
     const { setTheme } = useTheme()
     const currentPath = usePathname()
+    const [open, setOpen] = useState(false)
 
     const links = [
         {
@@ -113,6 +114,12 @@ export default function Navbar() {
                     </Button>
                 </ul>
             </div>
+            <Button onClick={() => setOpen(!open)} className="absolute right-8 top-4" variant="outline" size="icon">
+                {
+                  open ? (<Cross1Icon className="h-6 w-6" />): 
+                  (<HamburgerMenuIcon className="h-6 w-6" />)
+                }
+            </Button>
         </nav>
     )
 }
