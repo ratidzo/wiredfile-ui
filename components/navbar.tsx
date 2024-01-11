@@ -120,9 +120,26 @@ export default function Navbar() {
                                     </DropdownMenu>
                                 </li>
                                 <Separator className="my-6" />
-                                <Button className="w-full">
-                                    Sign in
-                                </Button>
+                                {
+                                    // scarfold: conditionally render the avatar or sign in button
+                                    currentPath === '/dashboard' ?
+                                    (
+                                        <Avatar className="ml-4">
+                                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                            <AvatarFallback>
+                                                CN
+                                            </AvatarFallback>
+                                        </Avatar>
+                                    ): 
+                                    (
+                                        <Link href={'/dashboard'}>
+                                            <Button className="w-full">  
+                                                 Sign in
+                                            </Button>
+                                        </Link>
+                                    )
+                                }
+                                <Separator className="my-6" />
                             </ul>
                         </motion.div>
                     )
