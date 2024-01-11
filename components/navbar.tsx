@@ -58,10 +58,10 @@ export default function Navbar() {
 
     return (
     
-        <div className="">
+        <nav className="py-4 sm:flex sm:w-full sm:justify-between sm:items-center sm:px-6 sm:gap-4">
             {/* logo */}
-            <div className="px-4">
-                <h1 className="text-2xl font-bold text-indigo-500 dark:text-indigo-400">
+            <div className="px-4 sm:px-0 sm:w-full mr-4">
+                <h1 className="text-2xl font-bold text-indigo-500 dark:text-indigo-400 sm:min-w-0 sm:pr-8">
                     Wired File
                 </h1>
             </div>
@@ -75,9 +75,9 @@ export default function Navbar() {
                             animate={{opacity: 1}}
                             exit={{opacity: 0}}
                             transition={{duration: .2}}
-                            className="">
+                            className="sm:flex sm:items-center sm:w-full sm:min-w-0 sm:justify-end sm:gap-8 px-4">
                             {/* nav links */}
-                            <ul className="">
+                            <ul className="sm:flex sm:items-center">
                                 {
                                     links.map(link => (
                                         <li key={link.name} className="my-2">
@@ -90,7 +90,7 @@ export default function Navbar() {
                                     ))
                                 }
                                 {/* theme control dropdown menu */}
-                                <li className="mt-4">
+                                <li className="mt-4 sm:mt-0">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
                                             <Button variant="outline" size="icon" className="ml-3">
@@ -118,12 +118,14 @@ export default function Navbar() {
                                         </DropdownMenuContent>
                                     </DropdownMenu>
                                 </li>
-                                {/* <Separator className="my-6 sm:hidden" /> */}
-                                {
+                                <Separator className="my-6 sm:hidden" />
+                                
+                            </ul>
+                            {
                                     // scarfold: conditionally render the avatar or sign in button
                                     currentPath === '/dashboard' ?
                                     (
-                                        <Avatar className="ml-3">
+                                        <Avatar className="ml-3 sm:ml-10">
                                             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                             <AvatarFallback>
                                                 CN
@@ -137,20 +139,20 @@ export default function Navbar() {
                                             </Button>
                                         </Link>
                                     )
-                                }
-                                {/* <Separator className="my-6 sm:hidden" /> */}
-                            </ul>
+                                     
+                            }
+                             <Separator className="my-6 sm:hidden" />
                         </motion.div>
                     )
                 }
             </AnimatePresence>
-            <Button onClick={() => setOpen(!open)} className="absolute right-8 top-4 sm:hidden" variant="outline" size="icon">
+            <Button onClick={() => setOpen(!open)} className="absolute right-4 top-4 sm:hidden" variant="outline" size="icon">
                 {
                   open ? (<Cross1Icon className="h-6 w-6" />): 
                   (<HamburgerMenuIcon className="h-6 w-6" />)
                 }
             </Button>
-        </div>
+        </nav>
     
     )
 }
