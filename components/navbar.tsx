@@ -57,10 +57,11 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="w-full py-4 px-4">
+    <nav className="w-full fixed top-0 left-0">
+        <div className="w-full py-4 px-4 bg-indigo-50 dark:bg-indigo-950">
             {/* logo */}
             <div className="px-4">
-                <h1 className="text-2xl text-indigo-500 dark:text-indigo-400">
+                <h1 className="text-2xl font-bold text-indigo-500 dark:text-indigo-400">
                     Wired File
                 </h1>
             </div>
@@ -69,13 +70,14 @@ export default function Navbar() {
                 {
                     open && (
                         <motion.div
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
-                            transition={{duration: .2}}
-                            className="relative">
+                            key="navigation"
+                            initial={{y: -400, opacity: 0}}
+                            animate={{y: 0, opacity: 1}}
+                            exit={{y: -400, opacity: 0}}
+                            transition={{duration: .5}}
+                            className="relative z-[-1]">
                             {/* nav links */}
-                            <ul className="absolute left-0 w-full"
+                            <ul className="absolute left-0 w-full py-4"
 >
                                 {
                                     links.map(link => (
@@ -132,7 +134,8 @@ export default function Navbar() {
                   (<HamburgerMenuIcon className="h-6 w-6" />)
                 }
             </Button>
-        </nav>
+        </div>
+    </nav>
     )
 }
 
