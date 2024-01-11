@@ -3,7 +3,7 @@ export default function Layout({children}: {
     children: React.ReactNode
 }) {
     return (
-        <div className="flex w-full h-full">
+        <div className="flex w-full h-full pt-[4.5rem]">
             <div className="flex justify-start w-[20vw] border">
                 Sidebar
             </div>
