@@ -83,7 +83,7 @@ export default function Navbar() {
                                     links.map(link => (
                                         <li key={link.name} className="my-2">
                                             <Link href={link.link} >
-                                            <Button variant="link">
+                                            <Button variant="link" className="text-md">
                                                 { link.name }
                                             </Button>
                                             </Link>
