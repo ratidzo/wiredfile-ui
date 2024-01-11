@@ -22,7 +22,6 @@ import {
     DropdownMenuLabel
     
 } from "@/components/ui/dropdown-menu"
-import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
 import {
     Avatar,
@@ -31,7 +30,7 @@ import {
 } from '@/components/ui/avatar'
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+
 
 
 const istok_web_bold = Istok_Web({
