@@ -7,7 +7,10 @@ import {
      MoonIcon, 
      SunIcon,
      HamburgerMenuIcon,
-     Cross1Icon
+     Cross1Icon,
+     ExitIcon,
+     DesktopIcon
+     
      
 } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
@@ -75,12 +78,12 @@ export default function Navbar() {
                 </h1>
             </div>
             {/* nav menu */}
-            <ul className="flex gap-8">
+            <ul className="flex gap-6">
             {
                 links.map(link => (
                     <li key={link.name}>
                         <Link href={link.link} >
-                            <Button variant="link" className="text-md">
+                            <Button variant="ghost">
                                 { link.name }
                             </Button>
                         </Link>
@@ -111,7 +114,7 @@ export default function Navbar() {
                                     <h1>Dark</h1>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem className="gap-2 w-[13.375rem]" onClick={() => setTheme("system")}>
-                                    <GearIcon className="h-[1.2rem] w-[1.2rem]"/>
+                                    <DesktopIcon className="h-[1.2rem] w-[1.2rem]"/>
                                     <h1>System</h1>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
@@ -124,10 +127,29 @@ export default function Navbar() {
                 // scarfold: conditionally render the avatar or sign in button
                 currentPath === '/dashboard' ?
                     (
-                        <Avatar className="">
-                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                            <AvatarFallback> CN </AvatarFallback>
-                        </Avatar>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <Avatar className="">
+                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback> CN </AvatarFallback>
+                                </Avatar>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuLabel>
+                                    Profile
+                                </DropdownMenuLabel>
+                                <DropdownMenuItem className="gap-2 w-[13.375rem]">
+                                    <GearIcon className="w-[1.2rem] h-[1.2rem]" />
+                                    <h1>Settings</h1>
+                                </DropdownMenuItem>
+                                <Link href={'/'}>
+                                    <DropdownMenuItem className="gap-2">
+                                        <ExitIcon className="w-[1.2rem] h-[1.2rem]" />
+                                        <h1>Sign out</h1>
+                                    </DropdownMenuItem>
+                                </Link>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     ): 
                     (
                         <Link href={'/dashboard'}>
