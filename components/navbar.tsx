@@ -124,7 +124,7 @@ export default function Navbar() {
                                     // scarfold: conditionally render the avatar or sign in button
                                     currentPath === '/dashboard' ?
                                     (
-                                        <Avatar className="ml-4">
+                                        <Avatar className="ml-3">
                                             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                             <AvatarFallback>
                                                 CN
