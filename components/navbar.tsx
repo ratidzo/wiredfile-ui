@@ -70,7 +70,7 @@ export default function Navbar() {
 
     return (
     
-        <nav className="px-10 py-6 flex w-full justify-between">
+        <nav className="px-10 py-4 flex w-full justify-between fixed bg-white/80 dark:bg-[#020817]/50 border-b backdrop-blur-md">
             {/* logo */}
             <div>
                 <h1 className={`${istok_web_bold.className} text-3xl font-bold text-indigo-500 dark:text-indigo-400`}>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 links.map(link => (
                     <li key={link.name}>
                         <Link href={link.link} >
-                            <Button variant="ghost">
+                            <Button variant="ghost" className="font-bold">
                                 { link.name }
                             </Button>
                         </Link>
