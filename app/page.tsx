@@ -4,7 +4,7 @@ import { Istok_Web } from "next/font/google"
 const istock_web_bold = Istok_Web({
   style: "normal",
   weight: "700",
-  subsets: ['latin']
+  subsets: ["latin"]
 })
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex justify-center">
       <section className="flex flex-col items-center w-full pt-[10.94rem] h-[60rem]">
         <div>
-          <h1 className="text-5xl font-extrabold py-2">Keep your school's data</h1>
+          <h1 className="text-5xl font-extrabold py-2">Keep your school&apos;s data</h1>
           <h1 className="text-5xl font-extrabold text-indigo-500 dark:text-indigo-400 py-2">Wired to the Cloud.</h1>
         </div>
         <p className="mt-[1.31rem] text-2xl w-[48vw]">
