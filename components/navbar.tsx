@@ -1,5 +1,6 @@
 "use client"
 
+import { Istok_Web } from "next/font/google"
 import { Button } from "@/components/ui/button"
 import {
      GearIcon,
@@ -28,6 +29,14 @@ import {
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+
+
+const istok_web_bold = Istok_Web({
+    weight: '700',
+    style: 'normal',
+    subsets: ['latin']
+})
+
 
 export default function Navbar() {
     const { setTheme } = useTheme()
@@ -61,17 +70,17 @@ export default function Navbar() {
         <nav className="px-10 py-6 flex w-full justify-between">
             {/* logo */}
             <div>
-                <h1 className="text-2xl font-bold text-indigo-500 dark:text-indigo-400">
+                <h1 className={`${istok_web_bold.className} text-3xl font-bold text-indigo-500 dark:text-indigo-400`}>
                     Wired File
                 </h1>
             </div>
             {/* nav menu */}
-            <ul className="flex">
+            <ul className="flex gap-8">
             {
                 links.map(link => (
-                    <li key={link.name} className="">
+                    <li key={link.name}>
                         <Link href={link.link} >
-                            <Button variant="link" className="">
+                            <Button variant="link" className="text-md">
                                 { link.name }
                             </Button>
                         </Link>
