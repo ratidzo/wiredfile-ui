@@ -66,7 +66,7 @@ export default function Navbar() {
                 </h1>
             </div>
             {/* nav menu */}
-            <ul className="">
+            <ul className="flex">
             {
                 links.map(link => (
                     <li key={link.name} className="">
@@ -78,6 +78,7 @@ export default function Navbar() {
                     </li>
                 ))
             }
+            
             {/* theme control dropdown menu */}
                     <li className="">
                         <DropdownMenu>
@@ -109,7 +110,7 @@ export default function Navbar() {
                     </li>
             </ul>
                             
-            <div>
+            <div className="w-20 flex justify-end">
                 {
                 // scarfold: conditionally render the avatar or sign in button
                 currentPath === '/dashboard' ?
