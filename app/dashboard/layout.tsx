@@ -66,7 +66,8 @@ export default function Layout({children}: {
 
     return (
         <div className="flex w-full h-full pt-[4.5rem]">
-            <div className="flex justify-start w-[20vw] border pt-10 pl-6">
+            {/* sidebar - turn on border to see layout. */}
+            <div className="flex justify-start w-[20vw]  pt-10 pl-6">
                 <ul>
                     {
                         links.map(link => (
@@ -74,7 +75,7 @@ export default function Layout({children}: {
                                 <Link href={link.link}>
                                     {/* Depending on the `currentPath` variable, highlight each sidemenu link if it matches with the browser's current path */}
                                     <Button variant="ghost" className={`flex gap-2 w-[13.375rem] justify-start ${
-                                        currentPath === link.link ? 'bg-indigo-500/25 dark:bg-indigo-400/55 hover:bg-indigo-500/40 dark:hover:bg-indigo-400/45': ''
+                                        currentPath === link.link ? 'bg-black text-white dark:bg-white dark:text-black hover:bg-black/85 hover:text-white dark:hover:bg-white/85': ''
                                     }`}>
                                         {
                                             <link.icon className="h-[1.2rem] w-[1.2rem]"/>
@@ -89,7 +90,8 @@ export default function Layout({children}: {
                     }
                 </ul>
             </div>
-            <div className="flex justify-center w-[80vw] border">
+            {/* Function section - turn on border to see layout */}
+            <div className="flex justify-center w-[80vw] ">
                 {children}
             </div>
         </div>
