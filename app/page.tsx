@@ -1,5 +1,8 @@
 import { Istok_Web } from "next/font/google"
 
+import {
+  Button
+} from '@/components/ui/button'
 
 const istock_web_bold = Istok_Web({
   style: "normal",
@@ -19,7 +22,16 @@ export default function Home() {
         <p className="mt-[1.31rem] text-2xl w-[48vw]">
             Manage all data from one place. <span className={`${istock_web_bold.className} text-indigo-500 dark:text-indigo-400 font-bold `}>Wired File</span> makes it easy
             to <span className="font-bold" >store</span>, <span className="font-bold">secure</span> and <span className="font-bold">retrieve</span> records.
-        </p> 
+        </p>
+        <div className="flex justify-center gap-4 py-8">
+          <Button>
+            Get started
+          </Button>
+          <Button variant="outline">
+            Live demo
+            
+          </Button>
+        </div>
       </section>
     </div>
   )
