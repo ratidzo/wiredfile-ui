@@ -68,10 +68,10 @@ export default function Layout({children}: {
         <div className="flex w-full h-full pt-[4.5rem]">
             {/* sidebar - turn on border to see layout. */}
             <div className="flex justify-start w-[20vw]  pt-10 pl-6">
-                <ul>
+                <ul className='[&>*:nth-child(7)]:mt-[2rem]'>
                     {
                         links.map(link => (
-                            <li key={link.name} className="my-1">
+                            <li key={link.name} className="my-1 ">
                                 <Link href={link.link}>
                                     {/* Depending on the `currentPath` variable, highlight each sidemenu link if it matches with the browser's current path */}
                                     <Button variant="ghost" className={`flex gap-2 w-[13.375rem] justify-start ${
