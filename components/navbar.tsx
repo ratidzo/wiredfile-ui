@@ -124,7 +124,7 @@ export default function Navbar() {
             <div className="w-20 flex justify-end">
                 {
                 // scarfold: conditionally render the avatar or sign in button
-                currentPath === '/dashboard' ?
+                currentPath.startsWith('/dashboard') ?
                     (
                         <DropdownMenu>
                             <DropdownMenuTrigger>
