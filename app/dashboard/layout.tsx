@@ -1,5 +1,7 @@
+"use client"
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
     DashboardIcon,
     MagnifyingGlassIcon,
@@ -60,15 +62,20 @@ const links = [
 export default function Layout({children}: {
     children: React.ReactNode
 }) {
+    const currentPath = usePathname();
+
     return (
         <div className="flex w-full h-full pt-[4.5rem]">
             <div className="flex justify-start w-[20vw] border pt-10 pl-6">
                 <ul>
                     {
                         links.map(link => (
-                            <li key={link.name}>
+                            <li key={link.name} className="my-1">
                                 <Link href={link.link}>
-                                    <Button variant="ghost" className='flex gap-2 w-[10rem] justify-start'>
+                                    {/* Depending on the `currentPath` variable, highlight each sidemenu link if it matches with the browser's current path */}
+                                    <Button variant="ghost" className={`flex gap-2 w-[13.375rem] justify-start ${
+                                        currentPath === link.link ? 'bg-indigo-500/25 dark:bg-indigo-400/55 hover:bg-indigo-500/40 dark:hover:bg-indigo-400/45': ''
+                                    }`}>
                                         {
                                             <link.icon className="h-[1.2rem] w-[1.2rem]"/>
                                         }
