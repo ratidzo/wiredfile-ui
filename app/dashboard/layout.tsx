@@ -62,7 +62,7 @@ export default function Layout({children}: {
 }) {
     return (
         <div className="flex w-full h-full pt-[4.5rem]">
-            <div className="flex justify-start w-[20vw] border pt-10 pl-10">
+            <div className="flex justify-start w-[20vw] border pt-10 pl-6">
                 <ul>
                     {
                         links.map(link => (
