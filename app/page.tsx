@@ -4,6 +4,10 @@ import {
   Button
 } from '@/components/ui/button'
 
+import {
+  ArrowRightIcon
+} from '@radix-ui/react-icons'
+
 const istock_web_bold = Istok_Web({
   style: "normal",
   weight: "700",
@@ -27,9 +31,9 @@ export default function Home() {
           <Button>
             Get started
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" className="gap-2">
             Live demo
-            
+            <ArrowRightIcon className="h-[1.2rem] w-[1.2rem] hover:translate-x-2 transition-all duration-100" />
           </Button>
         </div>
       </section>
