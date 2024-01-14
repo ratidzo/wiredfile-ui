@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useState } from "react"
 import {
     ColumnDef,
@@ -26,26 +27,29 @@ export function StudentsTable<TData, TValue>({
     columns,
     data,
 }:DataTableProps<TData, TValue> ) {
+    
     const [pagination, setPagination] = useState({
         pageIndex: 0,
         pageSize: 10
     })
 
+    
+   
     const table = useReactTable({
-        data, // feed data source here
+        data, // feed data source here ?
         columns,
         state: {
             pagination,
         },
-        pageCount: ,
+        pageCount: 10,
         manualPagination: true,
         onPaginationChange: setPagination,
         getCoreRowModel: getCoreRowModel()
     })
 
     return (
-        <div className="rounded-md border">
-            <Table>
+        <div className="rounded-md border w-[75vw]">
+            <Table className="transition all duration-100">
                 <TableHeader>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>

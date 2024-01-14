@@ -82,7 +82,7 @@ export default function Navbar() {
                 links.map(link => (
                     <li key={link.name}>
                         <Link href={link.link} >
-                            <Button variant="ghost" className="font-bold">
+                            <Button variant="ghost">
                                 { link.name }
                             </Button>
                         </Link>
