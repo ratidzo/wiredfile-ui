@@ -1,6 +1,19 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table" // This type is used to define the shape of our data.
+import Link from "next/link"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import {
+  Button
+} from '@/components/ui/button'
+import { MoreHorizontal } from 'lucide-react'
 
 export type Student = {
   id: number
@@ -29,5 +42,34 @@ export const columns: ColumnDef<Student, any>[] = [
   {
     accessorKey: "last_name",
     header: "Surname"
+  },
+  {
+    id: 'actions',
+    cell: ({ row }) => {
+      const student = row.original
+
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-8 w-8 p-0">
+              <span className="sr-only">Open menu</span>
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem className="w-[13.625rem]">
+              <Link href={`/dashboard/database/student/${student.id}`}>
+                Details
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              Delete
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )
+    }
   }
 ]
