@@ -1,15 +1,14 @@
 "use client"
 
-import { ColumnDef } from "@tanstack/react-table"
-// This type is used to define the shape of our data.
+import { ColumnDef } from "@tanstack/react-table" // This type is used to define the shape of our data.
 
-type Student = {
+export type Student = {
   id: number
   first_name: string
   last_name: string
 }
 
-export const columns: ColumnDef<Student>[] = [
+export const columns: ColumnDef<Student, any>[] = [
   {
     accessorKey: "id",
     header: "ID"
